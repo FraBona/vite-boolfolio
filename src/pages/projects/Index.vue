@@ -19,12 +19,20 @@
     data(){
       return{
         projects: [],
+        BASE_URL: 'http://127.0.0.1:8000/api'
       }
     },
     methods: {
       fetchProjects() {
-
+        axios.get('http://127.0.0.1:8000/api/projects')
+        .then((res) => {
+          console.log(res);
+          this.projects = res.data.projects.data;
+        })
       }
+    },
+    created(){
+      this.fetchProjects();
     }
   }
 </script>
