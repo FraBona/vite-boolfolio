@@ -1,5 +1,9 @@
 <script >
+  import ProjectIndex from './pages/projects/index.vue'
   export default {
+    components: {
+      ProjectIndex
+    },
     data(){
       return{
         projects: [],
@@ -9,9 +13,7 @@
 </script>
 
 <template>
-  <div>
-    Hello
-  </div>
+  <ProjectIndex></ProjectIndex>
 </template>
 
 <style lang="scss">
