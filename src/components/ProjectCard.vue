@@ -1,6 +1,8 @@
 <template>
   <div class="card card-project">
     <h3>{{ project.title }}</h3>
+    <p v-if="project.type">{{ project.type.name }}</p>
+    <p v-if="project.technologies">{{ project.technologies.name }}</p>
   </div>
 </template>
 
