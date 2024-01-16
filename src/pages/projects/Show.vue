@@ -3,6 +3,12 @@
     <div class="container">
     <h1>{{project.title}}</h1>
     <p>{{project.slug}}</p>
+    <p v-if="project.type" class="type">{{ project.type.name }}</p>
+    <ul class="tech">
+      <li v-for="technology in project.technologies" :key="technology.id">
+         {{ technology.name }} 
+      </li>
+    </ul>
   </div>
   <div class="container">
     <p>{{project.content}}</p>
@@ -36,5 +42,13 @@
 </script>
 
 <style lang="scss" scoped>
+  .type{
+    font-weight: bold;
+  }
 
+  .tech{
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+  }
 </style>
