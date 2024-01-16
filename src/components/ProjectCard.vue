@@ -3,6 +3,7 @@
     <h3>{{ project.title }}</h3>
     <p v-if="project.type">{{ project.type.name }}</p>
     <p v-if="technologies" v-for="technology in project.technologies" :key="technology.id">{{ technology.name }}</p>
+    <router-link :to="{name: 'projects.show', params: {slug: project.slug}}">Apri il progetto</router-link>
   </div>
 </template>
 
