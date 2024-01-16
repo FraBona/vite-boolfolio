@@ -2,7 +2,7 @@
   <div class="card card-project">
     <h3>{{ project.title }}</h3>
     <p v-if="project.type">{{ project.type.name }}</p>
-    <p v-if="project.technologies">{{ project.technologies.name }}</p>
+    <p v-if="technologies" v-for="technology in project.technologies" :key="technology.id">{{ technology.name }}</p>
   </div>
 </template>
 
@@ -12,6 +12,11 @@
       project: {
         type: Object,
         required: true,
+      }
+    },
+    data(){
+      return{
+        technologies: [],
       }
     }
   }
